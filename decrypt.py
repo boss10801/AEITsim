@@ -2,7 +2,9 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-filename = './yourKey/AESkey.txt'
+# filename = './yourKey/AESkey.txt'
+filename = './foreignKey/AESkey.txt'
+destiname = './yourKey/AESkey.txt'
 
 # open the encrypted file in binary mode
 with open(filename+'.encrypted', 'rb') as encrypt_file:
@@ -27,5 +29,5 @@ decrypted = private_key.decrypt(
     )
 )
 # Will replace AES key for latest
-with open(filename, 'wb') as file:
+with open(destiname, 'wb') as file:
     file.write(decrypted)

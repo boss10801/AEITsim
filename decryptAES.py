@@ -2,7 +2,8 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 # Take key and initialize vector from another user
 AESkey = './yourKey/AESkey.txt'
-initVector = './yourKey/iv.txt'
+# initVector = './yourKey/iv.txt'
+initVector = './foreignKey/iv.txt'
 
 # Read the Key and IV from yourKey folder
 with open(AESkey, 'r') as key_file:
