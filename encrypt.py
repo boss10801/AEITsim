@@ -2,8 +2,6 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-import sys
-
 filename = './yourKey/AESkey.txt'
 
 # open Original file in binary mode
