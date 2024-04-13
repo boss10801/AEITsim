@@ -2,14 +2,12 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-import sys, os
+import sys
 
-if (len(sys.argv)) != 2:
-    print ('Usage: ./encrypt.py original_filename')
-    exit(-1)
+filename = './yourKey/AESkey.txt'
 
 # open Original file in binary mode
-with open(sys.argv[1], 'rb') as org_file:
+with open(filename, 'rb') as org_file:
     org_data = org_file.read()
 
 # get the public key filename directly from the same directory
@@ -35,5 +33,5 @@ encrypted = public_key.encrypt(
     )
 )
 
-with open(sys.argv[1]+'.encrypted','wb') as file:
+with open(filename+'.encrypted','wb') as file:
     file.write(encrypted) #DAta

@@ -2,14 +2,12 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-import os, sys
+import sys
 
-if (len(sys.argv)) != 2:
-    print ('Usage: ./decrypt.py original_filename')
-    exit(-1)
+filename = './yourKey/AESkey.txt'
 
-
-with open(sys.argv[1]+'.encrypted', 'rb') as encrypt_file:
+# Open the encrypted file in binary mode
+with open(filename+'.encrypted', 'rb') as encrypt_file:
     encrypted = encrypt_file.read()
 
 # get the private key filename directly from the same directory
@@ -31,5 +29,5 @@ decrypted = private_key.decrypt(
     )
 )
 
-with open(sys.argv[1]+'.decrypted', 'wb') as file:
+with open(filename+'.decrypted', 'wb') as file:
     file.write(decrypted)

@@ -12,20 +12,19 @@ AESkey = bytes.fromhex(key_hex)     # Convert hex
 
 with open(initVector, 'r') as iv_file:
     iv_hex = iv_file.read()
-
 initVector = bytes.fromhex(iv_hex)  # Convert hex
 
-# Create a Cipher object with the key, AES algorithm, and CBC mode
+# Create a Encryptor with AES algorithm, and CBC mode
 cipher = Cipher(algorithms.AES(AESkey), modes.CBC(initVector))
-# Create a padder object
-padder = padding.PKCS7(128).padder()
+padder = padding.PKCS7(128).padder()    # Padding before encrypt
 
 # Read data from the file
 with open('data.txt', 'rb') as file:
     plaintext = file.read()
-padded_data = padder.update(plaintext) + padder.finalize()
 
-# Encrypt the data
+#First: Padding data
+padded_data = padder.update(plaintext) + padder.finalize()
+#Second: Encrypt the data
 encryptor = cipher.encryptor()
 ciphertext = encryptor.update(padded_data) + encryptor.finalize()
 

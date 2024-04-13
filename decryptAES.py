@@ -11,10 +11,10 @@ AESkey = bytes.fromhex(key_hex)     # Convert hex
 
 with open(initVector, 'r') as iv_file:
     iv_hex = iv_file.read()
-
 initVector = bytes.fromhex(iv_hex)  # Convert hex
 
-# Create a Cipher object with the key, AES algorithm, and CBC mode
+
+# Create a Decryptor for AES algorithm, and CBC mode
 cipher = Cipher(algorithms.AES(AESkey), modes.CBC(initVector))
 decryptor = cipher.decryptor()
 
@@ -22,9 +22,10 @@ decryptor = cipher.decryptor()
 with open('data.txt.encrypted', 'rb') as file:
     ciphertext = file.read()
 
-# Decrypt the data
+#First: Decrypt the data
 padded_plaintext = decryptor.update(ciphertext) + decryptor.finalize()
-unpadder = padding.PKCS7(128).unpadder()    #Unpadding data
+#Second: Unpadding data
+unpadder = padding.PKCS7(128).unpadder()
 plaintext = unpadder.update(padded_plaintext) + unpadder.finalize()
 
 # Write the decrypted data back to a file
