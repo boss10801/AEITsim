@@ -13,7 +13,7 @@ with open(sys.argv[1], 'rb') as org_file:
     org_data = org_file.read()
 
 # get the public key filename directly from the same directory
-pub_pem = './keys/pub.pem'
+pub_pem = './foreignKey/pub.pem'
 
 with open(pub_pem, 'rb') as pub_key_file:
     # De-serialize it back to an object  in public key
