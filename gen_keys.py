@@ -21,7 +21,7 @@ priv_pem = private_key.private_bytes(
 )
 
 # Create a private key in format of byte code
-with open('keys/priv.pem', 'wb') as priv_pem_file:
+with open('yourKey/priv.pem', 'wb') as priv_pem_file:
     priv_pem_file.write(priv_pem)
 
 #Create a public key
@@ -33,5 +33,5 @@ pub_pem = public_key.public_bytes(
 
 )
 
-with open('keys/pub.pem', 'wb') as pub_pem_file:
+with open('yourKey/pub.pem', 'wb') as pub_pem_file:
     pub_pem_file.write(pub_pem)

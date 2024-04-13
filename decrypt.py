@@ -13,7 +13,7 @@ with open(sys.argv[1]+'.encrypted', 'rb') as encrypt_file:
     encrypted = encrypt_file.read()
 
 # get the private key filename directly from the same directory
-priv_pem = './keys/priv.pem'
+priv_pem = './yourKey/priv.pem'
 
 with open(priv_pem, 'rb') as key_file:
     private_key = serialization.load_pem_private_key(
