@@ -18,6 +18,13 @@ def decryptionAES():
     filename = input("Enter the name of the file you want to decrypt: ")
     os.system(f'python decryptAES.py {filename}')
 
+def copyiv(): #copy from foreignKey to yourKey
+    initVector = './foreignKey/iv.txt'
+    with open(initVector, 'r') as iv_file:
+        iv_hex = iv_file.read()
+    with open('./yourKey/iv.txt', 'w') as iv_file:
+        iv_file.write(iv_hex)
+
 def main():
     print("Welcome to the Encryption/Decryption Program!")
     print("Please choose an option:")
@@ -38,7 +45,8 @@ def main():
         decryption()
         decryptionAES()
     elif choice == '4':
-        encryptionAES()
+        copyiv()
+        # encryptionAES()
     elif choice == '5':
         decryptionAES()
     elif choice == 'exit':
