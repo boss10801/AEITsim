@@ -2,9 +2,8 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-# filename = './yourKey/AESkey.txt'
 filename = './foreignKey/AESkey.txt'
-destiname = './yourKey/AESkey.txt'
+destiname = './yourKey/AESkey.txt'  #Destination for AESkey.txt
 
 # open the encrypted file in binary mode
 with open(filename+'.encrypted', 'rb') as encrypt_file:

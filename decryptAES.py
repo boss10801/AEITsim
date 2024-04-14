@@ -6,7 +6,7 @@ from cryptography.hazmat.primitives import padding
 AESkey = './yourKey/AESkey.txt'
 initVector = './foreignKey/iv.txt'
 
-# Read the Key and IV from yourKey folder
+# Read the Key from yourKey and IV from foreignKey folder
 with open(AESkey, 'r') as key_file:
     key_hex = key_file.read()
 AESkey = bytes.fromhex(key_hex)     # Convert hex
