@@ -5,13 +5,18 @@ def key_generation():
     os.system('python gen_keysAES.py')
 
 def encryption():
-    filename = input("Enter the name of the file you want to encrypt: ")
-    os.system(f'python encrypt.py {filename}')
-    os.system(f'python encryptAES.py {filename}')
+    os.system(f'python encrypt.py')
 
 def decryption():
-    os.system('python decrypt.py')
-    os.system('python decryptAES.py')
+    os.system(f'python decrypt.py')
+
+def encryptionAES():
+    filename = input("Enter the name of the file you want to encrypt: ")
+    os.system(f'python encryptAES.py {filename}')
+
+def decryptionAES():
+    filename = input("Enter the name of the file you want to decrypt: ")
+    os.system(f'python decryptAES.py {filename}')
 
 def main():
     print("Welcome to the Encryption/Decryption Program!")
@@ -19,14 +24,25 @@ def main():
     print("1. Key Generation")
     print("2. Encryption")
     print("3. Decryption")
+    print("4. Encryption with AES only")
+    print("5. Decryption with AES only")
+    print("exit. to exit")
     choice = input("Enter your choice (1/2/3): ")
 
     if choice == '1':
         key_generation()
     elif choice == '2':
         encryption()
+        encryptionAES()
     elif choice == '3':
         decryption()
+        decryptionAES()
+    elif choice == '4':
+        encryptionAES()
+    elif choice == '5':
+        decryptionAES()
+    elif choice == 'exit':
+        exit(-1)
     else:
         print("Invalid choice. Please enter 1, 2, or 3.")
 

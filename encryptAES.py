@@ -20,7 +20,7 @@ cipher = Cipher(algorithms.AES(AESkey), modes.CBC(initVector))
 padder = padding.PKCS7(128).padder()    # Padding before encrypt
 
 # Read data from the file
-filename = sys.argv[1]
+filename = 'export/' + sys.argv[1]
 with open(filename, 'rb') as file:
     plaintext = file.read()
 
