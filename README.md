@@ -11,6 +11,7 @@ For receiver
     - Your own priv.pem  
     - iv.txt from sender  
     - AESkey.txt.encrypted from sender  
+    - data.txt.encrypted
 AESkey will share between two user  
 Two user will always use AESkey from sender  
 The AESkey in your key will automatically update if you decrypt the AESkey.txt.encrypted  
