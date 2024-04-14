@@ -1,0 +1,11 @@
+In this yourKey folder
+    It build to contain keys file which created by that role
+
+    For sender
+        sender must have iv.txt and AESkey.txt
+            To encrypt data
+    For receiver
+        receiver must have priv.pem
+            Te decrypt the AESkey.encrypted
+
+    iv.txt will create automatically if you use 

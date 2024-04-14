@@ -1,0 +1,13 @@
+In this foreignKey folder
+    It build to contain keys file from both sender and receiver
+
+    For sender
+        sender will receive pub.pem from receiver
+            To encrypt AESkey
+    For receiver
+        receiver will receive iv.txt from sender
+            To use for decrypt data from sender
+        receiver will receive AESkey.txt.encrypted from sender
+            To use it as a key for decrypt data from sender
+
+    iv.txt will create automatically if you use 
