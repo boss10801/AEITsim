@@ -1,5 +1,19 @@
 # Keypair Encryption
 Practice one of the Encryption method which is wildly use in modern day website, Due to limited resource these code will be tested in one machine
+
+## Notice
+For sender  
+    You require  
+    - pub.pem from receiver  
+
+For receiver  
+    You require  
+    - Your own priv.pem  
+    - iv.txt from sender  
+    - AESkey.txt.encrypted from sender  
+AESkey will share between two user  
+Two user will always use AESkey from sender  
+The AESkey in your key will automatically update if you decrypt the AESkey.txt.encrypted  
 ## How to use it
 pre requirements: Install Cryptography
 You can also try to set a virtual Enviroment before installation by
