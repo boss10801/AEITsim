@@ -5,8 +5,9 @@ def key_generation():
     os.system('python gen_keysAES.py')
 
 def encryption():
-    os.system('python encrypt.py')
-    os.system('python encryptAES.py')
+    filename = input("Enter the name of the file you want to encrypt: ")
+    os.system(f'python encrypt.py {filename}')
+    os.system(f'python encryptAES.py {filename}')
 
 def decryption():
     os.system('python decrypt.py')

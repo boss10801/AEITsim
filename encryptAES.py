@@ -1,3 +1,4 @@
+import sys
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 
@@ -19,7 +20,8 @@ cipher = Cipher(algorithms.AES(AESkey), modes.CBC(initVector))
 padder = padding.PKCS7(128).padder()    # Padding before encrypt
 
 # Read data from the file
-with open('data.txt', 'rb') as file:
+filename = sys.argv[1]
+with open(filename, 'rb') as file:
     plaintext = file.read()
 
 #First: Padding data
@@ -29,5 +31,5 @@ encryptor = cipher.encryptor()
 ciphertext = encryptor.update(padded_data) + encryptor.finalize()
 
 # Write the encrypted data back to a file
-with open('data.txt.encrypted', 'wb') as file:
+with open(f'{filename}.encrypted', 'wb') as file:
     file.write(ciphertext)
